@@ -4,6 +4,7 @@ import {
   Col,
   Space,
   Card,
+  Button,
 } from 'antd';
 import {IPokedexList} from './pokedex.types';
 import SkeletonComponent from '../pokedex/skeletonBar';
@@ -11,6 +12,7 @@ import SkeletonComponent from '../pokedex/skeletonBar';
 const PokedexContentComponent: React.FC<IPokedexList> = ({
     data,
     loading,
+    onChangePage,
 }) => {
   const textTitle = (data: string | any) => {
     return (
@@ -48,6 +50,7 @@ const PokedexContentComponent: React.FC<IPokedexList> = ({
                     </Card>
                   ))
               }
+              <Button onClick={onChangePage}>Next</Button>
             </Space>
         </Col>
     </Row>
